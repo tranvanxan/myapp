@@ -1,0 +1,20 @@
+<template name="Template_PostItem">
+    <div class="post">
+        <a href="#" class="upvote btn btn-default {{upvotedClass}}"><i class="fa fa-long-arrow-up"></i> </a>
+        <div class="post-content">
+            <h3><a href="{{url}}">{{title}}</a><span>{{ConverISODate submitted}} </span></h3>
+            <p>
+                {{Pluralize votes "Vote"}},
+                tạo bởi {{author}}
+                -
+                <a href="pathFor 'Route_PostPage'">{{commentsCount}} bình luận</a>
+                {{#if ownPost}}
+                    (<a href="pathFor 'Route_PostEdit'">Sửa</a>
+                    -
+                    <a class="delete" href="#">Xóa</a>)
+                {{/if}}
+            </p>
+        </div>
+        <a href="pathFor 'Route_PostPage'" class="discuss btn btn-default">Thảo luận</a>
+    </div>
+</template>

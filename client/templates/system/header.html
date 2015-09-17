@@ -1,0 +1,298 @@
+<template name="Template_Header">
+    <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="javascript:void(0);"><i class="fa fa-bars"></i> </a>
+
+                <form role="search" class="navbar-form-custom">
+                    <div class="form-group">
+                        <input type="text" placeholder="{{Translate "RequestSearchThing"}}..." class="form-control" name="top-search" id="top-search">
+                    </div>
+                </form>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">{{Assistant "Talking"}}</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" title="{{Translate "ListNotify"}}">
+                        <i class="fa fa-globe text-info"></i>
+                        {{#if Header_NotificationCountNew}}
+                            <span class="label label-warning">{{Header_NotificationCountNew}}</span>
+                        {{/if}}
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        {{#if Header_NotificationCount}}
+                            {{#each Header_Notifications}}
+                                {{> Template_Header_NotificationItem}}
+                            {{/each}}
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="/">
+                                        <i class="fa fa-eye"></i> <strong>{{Translate "ViewAll"}}</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        {{else}}
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="#">
+                                        <strong>{{Translate "NoNotify"}}</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        {{/if}}
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" title="{{Translate "ListTodo"}}">
+                        <i class="fa fa-tasks text-warning"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 16 tin nhắn
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 người theo dõi
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>Xem tất cả</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="right-sidebar-toggle" id="Header_A_UserInfomation" title="{{Translate "InfoUser"}}">
+                        <i class="fa fa-user text-navy"></i>
+                    </a>
+                </li>
+                <li><a href="/system" title="{{Translate "DashBoard"}}"><i class="fa fa-dashboard text-success"></i></a></li>
+                <li><a href="/" title="{{Translate "MainPage"}}"><i class="fa fa-th-large text-danger"></i></a></li>
+                <li>
+                    <a href="#" title="{{Translate "SignOut"}}" id="Header_A_Logout">
+                        <i class="fa fa-sign-out text-muted"></i> {{Translate "SignOut"}}
+                    </a>
+
+                </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <div id="right-sidebar">
+        <div class="sidebar-container">
+
+            <ul class="nav nav-tabs navs-3">
+
+                <li class="active"><a data-toggle="tab" href="#tab-1" title="{{Translate "ListFriend"}}">
+                    <i class="fa fa-comment"></i>
+                </a></li>
+                <li><a data-toggle="tab" href="#tab-2" title="{{Translate "SearchUser"}}">
+                    <i class="fa fa-search"></i>
+                </a></li>
+                <li class=""><a data-toggle="tab" href="#tab-3" title="{{Translate "Setting"}}">
+                    <i class="fa fa-gear"></i>
+                </a></li>
+            </ul>
+
+            <div class="tab-content">
+
+
+                <div id="tab-1" class="tab-pane active">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-users"></i> {{Translate "ListFriend"}}</h3>
+                        <small>{{Assistant "ResponseSearchFriend"}}</small>
+                    </div>
+
+                    <div>
+                        {{#each Assistant "SearchFriendList"}}
+                            <div class="sidebar-message">
+                                <a href="#">
+                                    <div class="pull-left text-center">
+                                        <img alt="image" class="img-circle message-avatar" src="/users/{{_id}}/profile.png">
+
+                                        <div class="m-t-xs">
+                                            <i class="fa {{#if status.online}}fa-circle text-navy{{else}}fa-circle-o text-muted{{/if}}"></i>
+                                            {{#if status.online}}
+                                                <i class="fa {{#if status.busy}}fa-bell-slash text-danger{{else}}fa-bell text-success{{/if}}"></i>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>{{username}}</h4>
+                                        {{{status.mood}}}
+                                        <br>
+                                        <small class="text-muted">{{TimeSince status.lastLogin.date}}</small>
+                                    </div>
+                                </a>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div id="tab-2" class="tab-pane">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-search"></i> {{Translate "SearchUser"}}</h3>
+                        <input type="text" id="Header_Input_SearchUser" class="col-md-12" maxlength="24" />
+                        <small>{{Assistant "ResponseSearchUser"}}</small>
+                    </div>
+
+                    <div>
+                        {{#if Assistant "SearchUserList"}}
+                            {{#each Assistant "SearchUserList"}}
+                                <div class="sidebar-message">
+                                    <a href="#" >
+                                        <div class="pull-left text-center">
+                                            <img alt="image" class="img-circle message-avatar" src="/users/{{_id}}/profile.png">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4>{{username}}</h4>
+                                            {{{status.mood}}}
+                                        </div>
+                                    </a>
+                                </div>
+                            {{/each}}
+                        {{else}}
+                            {{#if Assistant "ResultSearchUser"}}
+                                <div class="setings-item">
+                                    {{Assistant "ResultSearchUser"}}
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+
+                </div>
+
+                <div id="tab-3" class="tab-pane">
+
+                    <div class="sidebar-title">
+                        <h3><i class="fa fa-gear"></i> {{Translate "Setting"}}</h3>
+                        <small> {{Translate "UserSetting"}}</small>
+
+                    </div>
+
+                    <div class="sidebar-message">
+                        <a href="#" title="{{Translate "RequestEditMood"}}">
+                        {{{Assistant "UserMood"}}}
+                        </a>
+                    </div>
+
+
+                    <div class="setings-item">
+                        <span>
+                            {{Translate "Language"}}
+                        </span>
+                        <div class="switch">
+                            <select class="chosen-select" style="width:100px" id="Hearder_Select_Lang">
+                                {{#each LangList}}
+                                    <option value="{{symbol}}" {{Selected Lang symbol}}>{{title}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="setings-item">
+                            <span>
+                                <i class="fa fa-bell" id="Hearder_I_Busy"></i>
+                                {{Translate "ImBusy"}}
+                            </span>
+                        <div class="switch">
+                            <div>
+                                <input type="checkbox" class="js-switch-red-small" id="Hearder_CheckBox_Busy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setings-item">
+                        <span>
+                            {{Translate "OtherLogin"}}
+                        </span>
+                        <div class="switch">
+                            <div>
+                                <input type="checkbox" class="js-switch-green-small" id="Hearder_CheckBox_OtherLogin">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div  id="Hearder_Div_AdminSettings">
+                        <div class="sidebar-title">
+                            <h3><i class="fa fa-gears"></i> {{Translate "AdminSetting"}}</h3>
+                            <small> {{Translate "AdminSettingWarning"}}</small>
+                        </div>
+
+                        <div class="setings-item">
+                            <span>
+                                {{Translate "EnableLogin"}}
+                            </span>
+                            <div class="switch">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="Hearder_CheckBox_DisableLogin">
+                                    <label class="onoffswitch-label" for="Hearder_CheckBox_DisableLogin">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="Template_Header_NotificationItem">
+    <li>
+        <div class="dropdown-messages-box xan-div-quick-news">
+            <a class="pull-left">
+                <img alt="image" class="img-circle pull-left" src="/users/{{userId}}/profile.png">
+            </a>
+            <div class="media-body">
+                {{#if read}}
+                    <small class="pull-right"></small>
+                    <strong>{{commenterName}}</strong> đã bình luận bài viết của bạn.<br>
+                    <small class="text-muted">{{TimeSince createDate}} ({{ConverISODate createDate}})</small>
+                {{else}}
+                    <small class="pull-right text-navy"> </small>
+                    <strong>{{commenterName}}</strong> vừa bình luận bài viết của bạn.<br>
+                    <small class="text-muted text-navy"><strong>{{TimeSince createDate}} ({{ConverISODate createDate}})</strong></small>
+                {{/if}}
+            </div>
+        </div>
+    </li>
+    <li class="divider"></li>
+</template>
+
+

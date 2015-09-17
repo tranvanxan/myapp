@@ -1,0 +1,14 @@
+<template name="Template_PostPage">
+    {{> Template_PostItem}}
+    <ul class="comments">
+        {{#each comments}}
+            {{> Template_CommentItem}}
+        {{/each}}
+    </ul>
+
+    {{#if currentUser}}
+        {{> Template_CommentSubmit}}
+    {{else}}
+        <p>Vui lòng đăng nhập để thảo luận.</p>
+    {{/if}}
+</template>

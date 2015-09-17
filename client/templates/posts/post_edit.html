@@ -1,0 +1,21 @@
+<template name="Template_PostEdit">
+    <form class="main form">
+        <div class="form-group {{errorClass 'url'}}">
+            <label class="control-label" for="url">URL</label>
+            <div class="controls">
+                <input name="url" id="url" type="text" value="{{url}}" placeholder="Địa chỉ URL" class="form-control"/>
+                <span class="help-block">{{errorMessage 'url'}}</span>
+            </div>
+        </div>
+        <div class="form-group {{errorClass 'title'}}">
+            <label class="control-label" for="title">Tiêu đề</label>
+            <div class="controls">
+                <input name="title" id="title" type="text" value="{{title}}" placeholder="Tiêu đề" class="form-control"/>
+                <span class="help-block">{{errorMessage 'title'}}</span>
+            </div>
+        </div>
+        <input type="submit" value="Lưu" class="btn btn-success submit"/>
+        <a class="btn btn-warning" href="pathFor 'Route_System'">Bỏ qua</a>
+        <a class="btn btn-danger delete" href="#">Xóa</a>
+    </form>
+</template>

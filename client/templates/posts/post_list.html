@@ -1,0 +1,19 @@
+<template name="Template_PostsList">
+    <div class="posts page">
+        <div class="wrapper">
+            {{#if isReady}}
+                {{#each posts}}
+                    {{> Template_PostItem}}
+                {{/each}}
+            {{/if}}
+        </div>
+
+        {{#if nextPath}}
+            <a class="load-more" href="{{nextPath}}">Xem thêm</a>
+        {{else}}
+            {{#unless ready}}
+                {{> Template_Spinner_Wave}}
+            {{/unless}}
+        {{/if}}
+    </div>
+</template>

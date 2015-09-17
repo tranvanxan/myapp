@@ -1,0 +1,22 @@
+<template name="Template_Login">
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h2 class="logo-name"><img src="/website/logo.png" /> </h2>
+            </div>
+
+            <form class="m-t" role="form" id="Login_Form">
+                <div class="form-group">
+                    <input type="text" id="Login_Input_Username" class="form-control" placeholder="{{Translate "UserName"}}" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="Login_Input_Password" class="form-control" placeholder="{{Translate "Password"}}" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">
+                    {{Translate "SignIn"}}
+                </button>
+            </form>
+            <p class="m-t"> <small>&copy; 2014</small> </p>
+        </div>
+    </div>
+</template>

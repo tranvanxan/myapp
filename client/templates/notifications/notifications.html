@@ -1,0 +1,37 @@
+<template name="Template_Notifications">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Thông báo
+        {{#if notificationCountNew}}
+            <span class="badge badge-inverse">{{notificationCountNew}}</span>
+        {{/if}}
+        <b class="caret"></b>
+    </a>
+    <ul class="notification dropdown-menu">
+        {{#if notificationCount}}
+            {{#each notifications}}
+                {{> Template_NotificationItem}}
+            {{/each}}
+            <li><a name="Delete-Notification-Old" href="#" class="label-warning">Xóa các thông báo đã đọc!</a></li>
+        {{else}}
+            <li><span>Không có thông báo nào!</span></li>
+        {{/if}}
+    </ul>
+</template>
+
+<template name="Template_NotificationItem">
+    <li>
+        {{#if read}}
+            <a href="{{notificationPostPath}}">
+                {{commenterName}} đã bình luận bài viết của bạn
+                <br />
+                lúc {{creatDateTime}}
+            </a>
+        {{else}}
+            <a href="{{notificationPostPath}}">
+                <strong>{{commenterName}}</strong> vừa bình luận bài viết của bạn
+                <br />
+                lúc {{creatDateTime}}
+            </a>
+        {{/if}}
+    </li>
+</template>

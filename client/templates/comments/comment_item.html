@@ -1,0 +1,15 @@
+<template name="Template_CommentItem">
+    <li>
+        <h4>
+            <span class="author">{{author}}</span>
+            <p class="date">
+                lúc {{ConverISODate submitted}}
+                {{#if ownComment}}
+                    -
+                    <a class="delete" href="#">Xóa</a>
+                {{/if}}
+            </p>
+        </h4>
+        <p>{{body}}</p>
+    </li>
+</template>

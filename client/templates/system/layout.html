@@ -1,0 +1,12 @@
+<template name="Template_Layout">
+    <div id="wrapper">
+        {{>Template_MainMenu}}
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            {{>Template_Header}}
+            {{>Template.dynamic template=Template_Content}}
+            <br /><br />
+            {{>Template_Footer}}
+            {{>Template_ThemeConfig}}
+        </div>
+    </div>
+</template>
