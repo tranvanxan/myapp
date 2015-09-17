@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/client/helpers/config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/helpers/functions.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/main.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/comments/comment_item.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/comments/comment_item.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/comments/comment_submit.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/comments/comment_submit.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/frontage/firstpage.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/frontage/frontpage.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/frontage/includes/NotFoundPage.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/frontage/includes/NotFoundPage.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/notifications/notifications.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/notifications/notifications.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_edit.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_edit.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_item.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_item.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_list.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_list.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_page.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_submit.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/posts/post_submit.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/daskboard.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/daskboard.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/footer.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/header.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/include/not_found.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/include/not_found.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/layout.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/layout.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/mainmenu.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/mainmenu.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client/templates/system/themeconfig.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/collections/comments.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/collections/notifications.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/collections/post.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/collections/users.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/permissions.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/router.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/system/languages/vn.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/collections/logs.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/fixtures.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/methods.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/publications.js" charset="UTF-8" />
+  </component>
+</project>
