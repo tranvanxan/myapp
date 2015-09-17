@@ -1,7 +1,3 @@
-//Client
-
-
-//Chạy sau khi đã xây dựng xong cây DOM (lúc này chưa có template được đưa vào và chưa thực thi các code trong template như helpers, events, created, rendered)
 Meteor.startup(function() {
     // Tự động thu nhỏ menu dọc nếu bề ngang bị thu nhỏ sưới 768px
     if ($(this).width() < 769) {

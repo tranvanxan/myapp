@@ -35,6 +35,22 @@ Template.Template_Header.events({
             }
         });
     },
+    "change .myFileInput": function(event, template) {
+        FS.Utility.eachFile(event, function (file) {
+            Collection_Images.insert(file, function (err, fileObj) {
+                if (err) {
+                    // handle error
+                } else {
+                    // handle success depending what you need to do
+                    var userId = Meteor.userId();
+                    var imagesURL = {
+                        "profile.image": "/cfs/files/images/" + fileObj._id
+                    };
+                    Meteor.users.update(userId, {$set: imagesURL});
+                }
+            });
+        });
+    },
     'keypress #Header_Input_SearchUser': function (event) {
         if (event.which === 13) {
             Meteor.call('Method_Server_SearchUsersByName', $(event.target).val(), Meteor.userId(), function (error, result) {

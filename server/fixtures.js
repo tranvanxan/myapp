@@ -3,7 +3,6 @@
 //Nếu chưa có dữ liệu trong collection posts từ biến Posts thì tạo mẫu cho nó
 if (Collection_Posts.find().count() === 0) {
     var now = new Date().getTime();
-
     // create two users
     var AdminId = Meteor.users.insert({
         "_id" : "poqciS8g29rnPcJqP",

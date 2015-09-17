@@ -17,3 +17,5 @@ meteorhacks:fast-render
 kadira:blaze-layout
 twbs:bootstrap
 reactive-dict
+cfs:standard-packages
+cfs:filesystem

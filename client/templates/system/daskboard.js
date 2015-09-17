@@ -14,6 +14,8 @@ Template.Template_DaskBoard.rendered = function() {
 
     //Định thời 1s mới hiển thị nội dung
     Meteor.setTimeout(function () {
+        CKEDITOR.replace('editor1',{language: G_Lang.get()});
+
         $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
                 data1, data2
             ],

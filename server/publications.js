@@ -36,3 +36,5 @@ Meteor.publish("Channel_AllUserData", function () {
 Meteor.publish('Channel_Notifications', function() {
     return Collection_Notifications.find({userId: this.userId});
 });
+
+Meteor.publish("Channel_Images", function(){ return Collection_Images.find(); });

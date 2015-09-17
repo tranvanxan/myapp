@@ -11,7 +11,7 @@ Collection_Logs.allow({
     remove: function(doc) { return doc && Meteor.user().isAdmin; }
 });
 
-//Phương thức xóa thông báo
+//Phương thức cho Log
 Meteor.methods({
     LogInsert: function(message){
         if (Meteor.userId()) {
